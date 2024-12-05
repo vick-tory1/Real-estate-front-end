@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Landing Page</title>
+    <link rel="stylesheet" href="css.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body class="light-theme">
+    <div class="banner d-flex align-items-center">
+        <div class="banner-left">
+            <label class="switch d-flex">
+                <input id="toggle-theme" type="checkbox">
+                <span class="light-txt">light</span>
+                <span class="dark-txt">dark</span>
+            </label>
+            <h1>Transparent <br> Modern <br> Property</h1>
+            <div class="inner-desc">
+                <p>we are here to make your journey to a new home, simple and memorable. So we decided to bring you a
+                    platform which allows you to browse through millions of property listings across 900+ cities in
+                    India.
+                    Now buying and renting comes with the freedom of ease and comfort. </p>
+                <form id="zipForm">
+                    <div action="search.php" class="form-group d-flex flex-wrap" method="post">
+                        <input type="text" class="form-control" id="zipCode" name="zipCode"
+                            placeholder="Enter zipcode to search properties here" required>
+                        <button type="submit" class="black-btn" id="open-overlay">Search<a href="htmlsur.html"></a></button>
+                    </div>
+                </form>
+            </div>
+            <div class="social-icons d-flex align-items-center">
+                <ul class="d-flex">
+                    <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                </ul>
+                <span>Follow us</span>
+            </div>
+        </div>
+        <div class="banner-right d-flex">
+            <div class="family">
+                <img src="image/download (1).jpeg" alt="img" class="img-fluid">
+                <img src="image/download (10).jpeg" alt="img" class="img-fluid">
+                <div class="banner-right-inner">
+                    <h2>42k+</h2>
+                    <span>satisfied <br> family</span>
+                    <img src="image/download (11).jpeg" alt="heart-icon" class="img-fluid">
+                </div>
+                <img src="image/download (12).jpeg" alt="img" class="img-fluid">
+                <img src="image/download (13).jpeg" alt="img" class="img-fluid">
+            </div>
+            <div class="sale">
+                <img src="image/download (14).jpeg" alt="img" class="img-fluid">
+                <img src="image/download (15).jpeg" alt="img" class="img-fluid">
+                <div class="banner-right-inner">
+                    <h2>30k+</h2>
+                    <span>Available <br> Unit for Sale</span>
+                    <img src="image/download (16).jpeg" alt="unit-icon" class="img-fluid">
+                </div>png
+                <img src="image/download (17).jpeg" alt="img" class="img-fluid">
+                <img src="image/download (2).jpeg" alt="img" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+    <script>
+        const zipCodeMappings = {
+    "100001" : "htmlsur.html",
+    "900001" : "htmlsur.html",
+    "500001" : "htmlsur.html",
+    "400001" : "htmlsur.html",
+    "101001" : "htmlsur.html",
+    "700001" : "htmlsur.html",
+    "800001" : "htmlsur.html",
+    "110001" : "htmlsur.html",
+    "300001" : "htmlsur.html",
+    "600001" : "htmlsur.html",
+        };
+      
+        document.getElementById('zipForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+          const zipCode = document.getElementById('zipCode').value.trim();
+          if (zipCodeMappings[zipCode]) {
+            window.location.href = zipCodeMappings[zipCode]; // Redirect to mapped page
+          } else {
+            alert('Page not found for this zip code.');
+          }
+        });
+      </script>
+  </body>
+</html>
